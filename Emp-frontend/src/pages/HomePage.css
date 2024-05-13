@@ -1,0 +1,27 @@
+.hero {
+  display: flex;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../assets/home3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  height: 92vh;
+  padding-inline: 30px;
+}
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+.hero-text {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  word-spacing: 1;
+}
+.description {
+  font-size: 1.2rem;
+  max-width: 400px;
+  margin-bottom: 20px;
+}

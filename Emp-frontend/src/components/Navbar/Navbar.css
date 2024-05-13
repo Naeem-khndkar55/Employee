@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.Nav-bar {
+  background-color: #301934;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
