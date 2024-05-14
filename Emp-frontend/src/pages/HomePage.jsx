@@ -11,6 +11,7 @@ const HomePage = () => {
           <p className="description">
             A place to Manage all the Employee ,Its Easy to Manage From here
           </p>
+          <h3> Developed By Naeem Khandakar</h3>
         </div>
       </div>
     </>

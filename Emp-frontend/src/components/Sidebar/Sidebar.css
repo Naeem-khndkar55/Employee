@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+.sidebar {
+  background-color: #562b5e;
+  color: #fff;
+  padding: 20px;
+}
+
+.sidebar-item {
+  margin-bottom: 15px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar-link:hover {
+  text-decoration: underline;
+}
+
+.sidebar-icon {
+  margin-right: 10px;
+  padding: 20px;
+}
+.active {
+  background-color: rgba(22, 120, 138, 0);
+}
+.active .sidebar-link {
+  color: blueviolet;
+}

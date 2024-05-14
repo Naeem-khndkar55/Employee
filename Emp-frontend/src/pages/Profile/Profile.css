@@ -1,0 +1,24 @@
+.profile-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.profile-info {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.profile-info div {
+  margin-bottom: 10px;
+}
+
+.profile-info label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.profile-info span {
+  color: #333;
+}

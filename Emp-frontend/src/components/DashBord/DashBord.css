@@ -1,0 +1,12 @@
+.dashbord {
+  display: flex;
+  height: 120vh;
+}
+.side-bar {
+  width: 20%;
+  border-right: 2px solid grey;
+  background-color: #562b5e;
+}
+.content {
+  width: 80%;
+}

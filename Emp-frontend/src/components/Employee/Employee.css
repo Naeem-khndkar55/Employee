@@ -1,0 +1,19 @@
+.element {
+  padding: 20px 60px 0px 60px;
+}
+.table-icon1,
+.table-icon2,
+.table-icon13 {
+  margin: 0px 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.table-icon1 {
+  color: green;
+}
+.table-icon2 {
+  color: red;
+}
+.table-icon5 {
+  color: blue;
+}
