@@ -7,6 +7,7 @@ import Employee from "../components/Employee/Employee.jsx";
 import AddEmployee from "../pages/AddEmployee/AddEmployee.jsx";
 import EditEmployee from "../pages/EditEmployee/EditEmployee.jsx";
 import Profile from "../pages/Profile/Profile.jsx";
+import ProtectedRoute from "../auth/ProtrctedRoute.jsx";
 
 export function AppRoutes() {
   const routes = createBrowserRouter([
@@ -22,7 +23,11 @@ export function AppRoutes() {
 
     {
       path: "/dashbord",
-      element: <DashBord />,
+      element: (
+        <ProtectedRoute>
+          <DashBord />
+        </ProtectedRoute>
+      ),
       children: [
         {
           index: true,
