@@ -5,7 +5,7 @@ const createEmployee = async (req, res) => {
   try {
     const { name, email, designation, salary, starting, address, phone, dob } =
       req.body;
-
+    //hudai
     const newEmployee = new EmployeeModel({
       name,
       email,
