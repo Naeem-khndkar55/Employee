@@ -7,7 +7,7 @@ export const useUrl = () => {
 };
 
 export const UrlProvider = ({ children }) => {
-  const url = "http://localhost:3002";
+  const url = "https://employee-backend-ybej.onrender.com";
 
   return <UrlContext.Provider value={url}>{children}</UrlContext.Provider>;
 };
