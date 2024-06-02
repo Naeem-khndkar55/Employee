@@ -3,7 +3,7 @@ import Axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./EditEmployee.css"; // Assuming you have AddEmployee.css for external styling
-
+import { useUrl } from "../../auth/UrlContext";
 const EditEmployee = () => {
   const [employee, setEmployee] = useState([]);
   const [name, setName] = useState("");
@@ -17,12 +17,12 @@ const EditEmployee = () => {
   //const [image, setImage] = useState(null);
   const navigate = useNavigate();
   const { id } = useParams();
-
+  const url = useUrl();
   const handleSubmit = (e) => {
     e.preventDefault();
 
     Axios.put(
-      `http://localhost:3002/auth/updateemployee/${id}`,
+      `${url}/auth/updateemployee/${id}`,
       {
         name,
         email,
@@ -54,7 +54,7 @@ const EditEmployee = () => {
   };
 
   useEffect(() => {
-    Axios.get(`http://localhost:3002/auth/employee/${id}`, {
+    Axios.get(`${url}/auth/employee/${id}`, {
       // Corrected the endpoint URL
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,

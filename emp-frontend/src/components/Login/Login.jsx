@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Validation from "../../auth/Validation";
 import { userContext } from "../../App";
-
+import { useUrl } from "../../auth/UrlContext";
 const Login = () => {
   const [user, setUser] = useContext(userContext);
   const [email, setEmail] = useState("");
@@ -13,6 +13,7 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState([]);
   const navigate = useNavigate();
+  const url = useUrl();
   Axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +21,7 @@ const Login = () => {
     setErrors(err);
 
     if (err.email === "" && err.password === "") {
-      Axios.post("http://localhost:3002/auth/login", {
+      Axios.post(`${url}/auth/login`, {
         email,
         password,
       })

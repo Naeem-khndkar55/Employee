@@ -9,7 +9,7 @@ import EditEmployee from "../pages/EditEmployee/EditEmployee.jsx";
 import Profile from "../pages/Profile/Profile.jsx";
 import ProtectedRoute from "../auth/ProtrctedRoute.jsx";
 import NotFound from "../pages/NotFound.jsx";
-
+import { UrlProvider } from "../auth/UrlContext.jsx";
 export function AppRoutes() {
   const routes = createBrowserRouter([
     { path: "/", element: <HomePage /> },
@@ -55,5 +55,9 @@ export function AppRoutes() {
     },
   ]);
 
-  return <RouterProvider router={routes} />;
+  return (
+    <UrlProvider>
+      <RouterProvider router={routes} />
+    </UrlProvider>
+  );
 }

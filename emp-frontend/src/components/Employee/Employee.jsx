@@ -7,10 +7,11 @@ import { Link } from "react-router-dom";
 
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-
+import { useUrl } from "../../auth/UrlContext";
 const Employee = () => {
   const [employees, setEmployees] = useState([]);
   const MySwal = withReactContent(Swal);
+  const url = useUrl();
   const handleDelete = (id) => {
     MySwal.fire({
       title: "Are you sure?",
@@ -22,7 +23,7 @@ const Employee = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        Axios.delete(`http://localhost:3002/auth/employee/${id}`, {
+        Axios.delete(`${url}/auth/employee/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -90,7 +91,7 @@ const Employee = () => {
   ];
 
   useEffect(() => {
-    Axios.get("http://localhost:3002/auth/employees", {
+    Axios.get(`${url}/auth/employees`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

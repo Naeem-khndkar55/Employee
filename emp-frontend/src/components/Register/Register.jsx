@@ -4,7 +4,7 @@ import "./Register.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Validation from "../../auth/Validation";
-
+import { useUrl } from "../../auth/UrlContext";
 const Register = () => {
   const [name, setname] = useState("");
   const [email, setEmail] = useState("");
@@ -12,6 +12,7 @@ const Register = () => {
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState([]);
   const navigate = useNavigate();
+  const url = useUrl();
   Axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +20,7 @@ const Register = () => {
     setErrors(err);
 
     if (err.name === "" && err.email === "" && err.password === "") {
-      Axios.post("http://localhost:3002/auth/register", {
+      Axios.post(`${url}/auth/register`, {
         name,
         email,
         password,

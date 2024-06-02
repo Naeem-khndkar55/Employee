@@ -5,13 +5,15 @@ import "react-toastify/dist/ReactToastify.css";
 import { createContext, useEffect, useState } from "react";
 import Axios from "axios";
 import "react-toastify/ReactToastify.css";
-
+import { useUrl } from "./auth/UrlContext";
 export const userContext = createContext();
 
 function App() {
   const [user, setUser] = useState();
+
+  const url = useUrl();
   useEffect(() => {
-    Axios.get("http://localhost:3002/auth/verify", {
+    Axios.get(` ${url}/auth/verify`, {
       headers: {
         Authorization: `Berear ${localStorage.getItem("token")}`,
       },

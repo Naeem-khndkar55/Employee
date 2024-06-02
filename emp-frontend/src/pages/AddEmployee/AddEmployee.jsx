@@ -3,7 +3,7 @@ import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./AddEmployee.css";
-
+import { useUrl } from "../../auth/UrlContext";
 const AddEmployee = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -13,6 +13,7 @@ const AddEmployee = () => {
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [dob, setDob] = useState("");
+  const url = useUrl();
   //const [image, setImage] = useState(null);
   const navigate = useNavigate();
 
@@ -20,7 +21,7 @@ const AddEmployee = () => {
     e.preventDefault();
 
     Axios.post(
-      "http://localhost:3002/auth/addemployee",
+      `${url}/auth/addemployee"`,
       {
         name,
         email,
